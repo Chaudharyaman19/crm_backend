@@ -2,7 +2,9 @@ const Lead = require("../models/lead.model");
 const { ok, err } = require("../utils/response");
 
 exports.list = async (req, res) => {
-  const leads = await Lead.find();
+  const leads = await Lead.find({
+    createdBy: req.userId
+  });
   ok(res, leads);
 };
 exports.create = async (req, res) => {
