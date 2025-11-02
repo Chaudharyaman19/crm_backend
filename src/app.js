@@ -1,0 +1,11 @@
+const express = require("express");
+const app = express();
+const cors = require("cors");
+app.use(cors());
+app.use(express.json());
+const authRoutes = require("./routes/auth.routes");
+const leadsRoutes = require("./routes/leads.routes");
+app.use("/api/auth", authRoutes);
+app.use("/api/leads", leadsRoutes);
+app.get("/", (req, res) => res.send("CRM Backend"));
+module.exports = app;
