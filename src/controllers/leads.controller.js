@@ -3,7 +3,7 @@ const { ok, err } = require("../utils/response");
 
 exports.list = async (req, res) => {
   const leads = await Lead.find({
-    createdBy: req.userId
+    createdBy: req.userId,
   });
   ok(res, leads);
 };

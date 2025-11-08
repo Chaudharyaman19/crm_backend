@@ -2,23 +2,23 @@ const authService = require("../services/auth.service");
 const { ok, err } = require("../utils/response");
 const admin = require("../config/firebase");
 
-exports.register = async (req, res) => {
-  try {
-    const u = await authService.register(req.body);
-    ok(res, u);
-  } catch (e) {
-    err(res, e.message);
-  }
-};
+// exports.register = async (req, res) => {
+//   try {
+//     const u = await authService.register(req.body);
+//     ok(res, u);
+//   } catch (e) {
+//     err(res, e.message);
+//   }
+// };
 
-exports.login = async (req, res) => {
-  try {
-    const { user, token } = await authService.login(req.body);
-    ok(res, { user, token });
-  } catch (e) {
-    err(res, e.message, 401);
-  }
-};
+// exports.login = async (req, res) => {
+//   try {
+//     const { user, token } = await authService.login(req.body);
+//     ok(res, { user, token });
+//   } catch (e) {
+//     err(res, e.message, 401);
+//   }
+// };
 
 exports.firebaseLogin = async (req, res) => {
   try {
